@@ -6,7 +6,7 @@
 
 if(isset($_SESSION['user_id']))
 {
-    header("Location: /Request-Based-Marketplace/public/index.php?page=home");
+    header("Location: /index.php?page=home");
     exit();
 }
 
@@ -22,7 +22,7 @@ if(isset($_SESSION['user_id']))
         const password = document.getElementById('password').value;
         
         try {
-            const response = await fetch('/Request-Based-Marketplace/app/auth/loginAuth.php', {
+            const response = await fetch('/app/auth/loginAuth.php', {
                 method: 'POST',
                 
                headers:{
@@ -36,7 +36,7 @@ if(isset($_SESSION['user_id']))
             if (data.success) {
                 console.log(data.data.id, data.data.name, data.data.email);
                 alert('Login successful!');
-                window.location.href = '/Request-Based-Marketplace/public/index.php?page=home';
+                window.location.href = '/index.php?page=home';
             } else {
                 alert('Login failed. Please check your email and password.');
             }
@@ -47,8 +47,8 @@ if(isset($_SESSION['user_id']))
        }
         </script>
 
-</head>
-<body class="bg-gray-100 ">
+
+
 
     <div class="bg-white p-8 rounded-lg shadow-md w-full mx-auto max-w-2xl ">
         <div >

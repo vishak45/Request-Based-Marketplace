@@ -4,7 +4,6 @@
     session_start();
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,7 +29,7 @@ function logoutUSr()
     const ask=confirm('Are you sure you want to logout?');
     if(ask)
     {
-        window.location.href='/Request-Based-Marketplace/public/pages/logout.php';
+        window.location.href='/pages/logout.php';
     }
     return;
 }
@@ -58,13 +57,13 @@ function logoutUSr()
 </button>
         <!-- Navigation -->
         <nav class="hidden md:flex space-x-6">
-            <a href="/Request-Based-Marketplace/public/index.php" class="text-gray-700 hover:text-blue-600 font-medium">
+            <a href="/index.php?page=home" class="text-gray-700 hover:text-blue-600 font-medium">
                 Home
             </a>
-            <a href="/Request-Based-Marketplace/public/index.php?page=viewRequests" class="text-gray-700 hover:text-blue-600 font-medium">
+            <a href="/index.php?page=viewRequests" class="text-gray-700 hover:text-blue-600 font-medium">
                 View Requests
             </a>
-            <a href="/Request-Based-Marketplace/public/index.php?page=requestProducts" class="text-gray-700 hover:text-blue-600 font-medium">
+            <a href="/index.php?page=requestProducts" class="text-gray-700 hover:text-blue-600 font-medium">
                 Create Request
             </a>
         </nav>
@@ -77,11 +76,11 @@ function logoutUSr()
 ?>
 
         <nav class="hidden md:flex space-x-3">
-            <a href="/Request-Based-Marketplace/public/index.php?page=login"
+            <a href="/index.php?page=login"
                class="px-4 py-2 border border-blue-600 text-blue-600 rounded hover:bg-blue-50">
                 Login
             </a>
-            <a href="/Request-Based-Marketplace/public/index.php?page=register"
+            <a href="/index.php?page=register"
                class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">
                 Register
             </a>
@@ -108,14 +107,14 @@ function logoutUSr()
         id="userDropdown"
         class="hidden absolute right-0 mt-10 w-48 bg-white rounded-md shadow-lg border z-50"
     >
-        <a href="/Request-Based-Marketplace/public/index.php?page=userRequests"
+        <a href="/index.php?page=userRequests"
            class="block px-4 py-2 text-gray-700 hover:bg-gray-100">
             My Requests 
         </a>
 
     
 
-        <a href="/Request-Based-Marketplace/public/index.php?page=profile"
+        <a href="/index.php?page=profile"
            class="block px-4 py-2 text-gray-700 hover:bg-gray-100">
             Profile
         </a>
@@ -134,20 +133,20 @@ function logoutUSr()
     </div>
      <!-- Mobile Menu -->
     <div id="mobileMenu" class="hidden md:hidden border-t bg-white px-4 py-3 space-y-2">
-        <a href="/Request-Based-Marketplace/public/index.php" class="block py-2">Home</a>
-        <a href="/Request-Based-Marketplace/public/index.php?page=viewRequests" class="block py-2">View Requests</a>
-        <a href="/Request-Based-Marketplace/public/index.php?page=requestProducts" class="block py-2">
+        <a href="/index.php" class="block py-2">Home</a>
+        <a href="/index.php?page=viewRequests" class="block py-2">View Requests</a>
+        <a href="/index.php?page=requestProducts" class="block py-2">
             Create Request
         </a>
 
         <div class="border-t pt-2"></div>
 
         <?php if (!isset($_SESSION['user_id'])){ ?>
-            <a href="/Request-Based-Marketplace/public/index.php?page=login" class="block py-2">Login</a>
-            <a href="/Request-Based-Marketplace/public/index.php?page=register" class="block py-2">Register</a>
+            <a href="/index.php?page=login" class="block py-2">Login</a>
+            <a href="/index.php?page=register" class="block py-2">Register</a>
         <?php }else{?>
-            <a href="/Request-Based-Marketplace/public/index.php?page=profile" class="block py-2">Profile</a>
-            <a href="/Request-Based-Marketplace/public/index.php?page=userRequests" class="block py-2">My Requests</a>
+            <a href="/index.php?page=profile" class="block py-2">Profile</a>
+            <a href="/index.php?page=userRequests" class="block py-2">My Requests</a>
             <button onclick="logoutUSr()" class="block py-2 text-red-600">Logout</button>
         <?php } ?>
     </div>

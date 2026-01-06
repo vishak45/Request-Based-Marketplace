@@ -6,7 +6,7 @@
 
 if(isset($_SESSION['user_id']))
 {
-    header("Location: /Request-Based-Marketplace/public/index.php?page=home");
+    header("Location: /index.php?page=home");
     exit();
 }
 
@@ -27,7 +27,7 @@ if(isset($_SESSION['user_id']))
                 return;
             }
             try{
-                const response=await fetch('/Request-Based-Marketplace/app/auth/registerAuth.php', {
+                const response=await fetch('/app/auth/registerAuth.php', {
                     method:"POST",
                     headers:{
                         'Content-Type': 'application/json'
@@ -37,7 +37,7 @@ if(isset($_SESSION['user_id']))
                 const data=await response.json();
                 if(response.ok && data.success){
                     alert(data.message);
-                    window.location.href = '/Request-Based-Marketplace/public/index.php?page=login';
+                    window.location.href = '/index.php?page=login';
                 }
                 else if(!response.ok){
                     alert(data.message);
@@ -138,7 +138,7 @@ if(isset($_SESSION['user_id']))
         <!-- Footer -->
         <p class="text-sm text-center text-gray-600 mt-4">
             Already have an account?
-            <a href="/Request-Based-Marketplace/public/index.php?page=login"
+            <a href="/index.php?page=login"
                class="text-blue-600 hover:underline">
                 Login
             </a>

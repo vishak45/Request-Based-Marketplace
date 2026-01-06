@@ -5,7 +5,7 @@ if (session_status() === PHP_SESSION_NONE) {
   if($_SERVER['REQUEST_METHOD'] == 'GET')
   {
     session_destroy();
-    header("Location: /Request-Based-Marketplace/public/index.php");
+    header("Location: /index.php");
     exit();
   }
 

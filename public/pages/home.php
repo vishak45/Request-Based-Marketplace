@@ -37,7 +37,7 @@ $serviceRequests = $result->fetch_all(MYSQLI_ASSOC);
         <p class="text-lg mb-4">
             Find what you need and share your requirements with others.
         </p>
-        <a href="/Request-Based-Marketplace/public/index.php?page=requestProducts"
+        <a href="/index.php?page=requestProducts"
    class="inline-block bg-white text-blue-600 px-6 py-2 rounded font-semibold hover:bg-gray-100">
     Create a Request
 </a>
@@ -89,7 +89,7 @@ $serviceRequests = $result->fetch_all(MYSQLI_ASSOC);
             </div>
             
 
-            <a href="/Request-Based-Marketplace/public/index.php?page=requestDetails&requestId=<?=$request['id']?>"
+            <a href="/index.php?page=requestDetails&requestId=<?=$request['id']?>"
                class="block text-center bg-blue-600 text-white py-2 rounded hover:bg-blue-700">
                 View Details
             </a>
@@ -139,7 +139,7 @@ $serviceRequests = $result->fetch_all(MYSQLI_ASSOC);
                 ✅ Status: <?= htmlspecialchars($request['status']) ?>
             </div>
 
-             <a href="/Request-Based-Marketplace/public/index.php?page=requestDetails&requestId=<?=$request['id']?>"
+             <a href="/index.php?page=requestDetails&requestId=<?=$request['id']?>"
                class="block text-center bg-green-600 text-white py-2 rounded hover:bg-green-700">
                 View Details
             </a>

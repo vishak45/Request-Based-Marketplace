@@ -5,7 +5,7 @@ if (session_status() === PHP_SESSION_NONE) {
 
 // Ensure user is logged in
 if (!isset($_SESSION['user_id'])) {
-    header("Location: /Request-Based-Marketplace/public/index.php?page=login");
+    header("Location: /index.php?page=login");
     exit;
 }
 
@@ -20,7 +20,7 @@ if (!isset($_SESSION['user_id'])) {
 
     document.addEventListener('DOMContentLoaded', async() => {
         try{
-            const response=await fetch('/Request-Based-Marketplace/app/controller/fetchUserRequests.php',{
+            const response=await fetch('/app/controller/fetchUserRequests.php',{
                 method:'GET',
                 headers:{
                     'Content-Type': 'application/json'
@@ -70,7 +70,7 @@ if (!isset($_SESSION['user_id'])) {
        try{
 
        
-        const response=await fetch('/Request-Based-Marketplace/app/controller/deleteUserProducts.php',{
+        const response=await fetch('/app/controller/deleteUserProducts.php',{
             method:'POST',
             headers:{
                 'Content-Type': 'application/json'

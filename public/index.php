@@ -1,12 +1,6 @@
-<html>
-
-<head>
-     <script src="https://cdn.tailwindcss.com"></script>
-    
-</head>
-</html>
-
 <?php
+include __DIR__ . '/../public/includes/header.php';
+
 
 $page = $_GET['page'] ?? 'home';
 
@@ -17,7 +11,7 @@ else{
     $path='pages';
 }
 
-include __DIR__ . '/../public/includes/header.php';
+
 
 $file = __DIR__ . '/../public/' . $path . '/' . $page . '.php';
 

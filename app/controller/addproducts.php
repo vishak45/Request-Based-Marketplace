@@ -1,4 +1,3 @@
-
 <?php
  if (session_status() === PHP_SESSION_NONE) {
     session_start();
@@ -6,7 +5,12 @@
 require_once __DIR__ . '/../config/db.php';
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
     header('Content-Type: application/json');
-
+    if(!isset($_SESSION['user_id']))
+    {
+        http_response_code(401);
+        echo json_encode(['success' => false, 'message' => 'Unauthorized']);
+        exit;
+    }
     $rawInput = file_get_contents('php://input');
     $body = json_decode($rawInput, true)?? [];
     $request_type = $body['request_type'] ?? ($_POST['request_type'] ?? '');

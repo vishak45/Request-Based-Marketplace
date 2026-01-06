@@ -4,7 +4,7 @@ if (session_status() === PHP_SESSION_NONE) {
 }
 
 if (!isset($_SESSION['user_id'])) {
-    header("Location: /Request-Based-Marketplace/public/index.php?page=login");
+    header("Location: /index.php?page=login");
     exit();
 }
 
@@ -32,7 +32,7 @@ $userEmail = $_SESSION['user_email'] ?? 'user@email.com';
 
     <!-- My Requests -->
     <div class="bg-white p-6 rounded-xl shadow">
-        Find your requests on the <a href="/Request-Based-Marketplace/public/index.php?page=userRequests" class="text-blue-600">My Requests</a> page
+        Find your requests on the <a href="/index.php?page=userRequests" class="text-blue-600">My Requests</a> page
         </div>
 
       

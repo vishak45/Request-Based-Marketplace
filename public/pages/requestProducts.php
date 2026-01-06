@@ -4,7 +4,7 @@ if (session_status() === PHP_SESSION_NONE) {
 }
 
 if (!isset($_SESSION['user_id'])) {
-    header("Location: /Request-Based-Marketplace/public/index.php?page=login");
+    header("Location: /index.php?page=login");
     exit();
 }
 ?>
@@ -163,7 +163,7 @@ if (!isset($_SESSION['user_id'])) {
         const contact_no = document.getElementById('contact_no').value;
         const email = document.getElementById('email').value??'';
         try{
-            const response=await fetch('/Request-Based-Marketplace/app/controller/addProducts.php',{
+            const response=await fetch('/app/controller/addProducts.php',{
                 method:'POST',
                 headers:{
                     'Content-Type': 'application/json'
@@ -181,7 +181,7 @@ if (!isset($_SESSION['user_id'])) {
             const data=await response.json();
             if(data.success){
                 alert(data.message); 
-                window.location.href='/Request-Based-Marketplace/public/pages/userRequests.php';
+                window.location.href='/index.php?page=userRequests';
             }
             else{
                 alert(data.message);

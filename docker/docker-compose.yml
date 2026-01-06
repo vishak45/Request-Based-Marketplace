@@ -1,15 +1,15 @@
-version: "3.9"
-
 services:
   app:
     build:
       context: .
-      dockerfile: docker/Dockerfile
+      dockerfile: Dockerfile
     container_name: requestmart_app
     ports:
-      - "80:80"
+      - "8080:80"
     volumes:
-      - .:/var/www/html
+      - ./../:/var/www/html/Request-Based-Marketplace/
+    environment:
+      - APACHE_DOCUMENT_ROOT=/var/www/html/Request-Based-Marketplace/public
     depends_on:
       - db
 
@@ -21,10 +21,14 @@ services:
       MYSQL_ROOT_PASSWORD: vishak@123
       MYSQL_DATABASE: products_db
     ports:
-      - "3306:3306"
+      - "3307:3306"
     volumes:
       - db_data:/var/lib/mysql
-      - ./database/products_db.sql:/docker-entrypoint-initdb.d/products_db.sql
+      - ./../database/products_db.sql:/docker-entrypoint-initdb.d/products_db.sql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      timeout: 20s
+      retries: 10
 
 volumes:
   db_data:

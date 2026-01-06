@@ -119,7 +119,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             ✅ Status: <?= htmlspecialchars($request['status']) ?>
         </div>
 
-        <a href="/Request-Based-Marketplace/public/index.php?page=requestDetails&requestId=<?=$request['id']?>"
+        <a href="/index.php?page=requestDetails&requestId=<?=$request['id']?>"
            class="block text-center bg-blue-600 text-white py-2 rounded hover:bg-blue-700">
             View Details
         </a>
@@ -138,7 +138,7 @@ async function applyFilters() {
     ).map(cb => cb.value);
 
     const response = await fetch(
-        '/Request-Based-Marketplace/public/pages/viewRequests.php',
+        '/pages/viewRequests.php',
         {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -186,7 +186,7 @@ function renderRequests(requests) {
                     ✅ Status: ${escapeHtml(req.status)}
                 </div>
 
-                <a href="/Request-Based-Marketplace/public/index.php?page=requestDetails&requestId=<?=$request['id']?>"
+                <a href="/index.php?page=requestDetails&requestId=<?=$request['id']?>"
                    class="block text-center bg-blue-600 text-white py-2 rounded hover:bg-blue-700">
                     View Details
                 </a>
