@@ -40,7 +40,6 @@ Request-Based-Marketplace/
 │   ├── Dockerfile              # PHP/Apache build config
 │   └── docker-compose.yml      # Container definitions
 ├── public/                     # Web-served files
-├── .gitignore
 └── README.md
 
 ````
@@ -156,7 +155,3 @@ Feel free to open issues, suggest improvements, or submit pull requests.
 
 Happy coding 🚀
 
-
-
-Do you want me to make that version too?
-```
