@@ -1,5 +1,5 @@
 <?php
-include __DIR__ . '/../public/includes/header.php';
+
 
 
 $page = $_GET['page'] ?? 'home';
@@ -12,7 +12,7 @@ else{
 }
 
 
-
+include __DIR__ . '/../public/includes/header.php';
 $file = __DIR__ . '/../public/' . $path . '/' . $page . '.php';
 
 if (file_exists($file)) {
@@ -30,3 +30,4 @@ if (file_exists($file)) {
 }
 
 include __DIR__ . '/../public/includes/footer.php';
+?>

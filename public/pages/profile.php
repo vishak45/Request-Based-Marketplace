@@ -4,6 +4,7 @@ if (session_status() === PHP_SESSION_NONE) {
 }
 
 if (!isset($_SESSION['user_id'])) {
+    
     header("Location: /index.php?page=login");
     exit();
 }
@@ -15,7 +16,6 @@ $userEmail = $_SESSION['user_email'] ?? 'user@email.com';
 // Dummy user
 
 ?>
-
 <div class="max-w-6xl mx-auto px-4 py-10">
 
     <!-- Profile Card -->
