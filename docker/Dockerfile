@@ -10,11 +10,11 @@ RUN docker-php-ext-install mysqli pdo pdo_mysql
 WORKDIR /var/www/html/Request-Based-Marketplace
 
 # 2. Configure Apache for .htaccess and update the Alias for /app
-# We update the directory paths to include /Request-Based-Marketplace/
+
 RUN echo '<Directory /var/www/html/Request-Based-Marketplace>\n    AllowOverride All\n    Require all granted\n</Directory>\n\nAlias /app /var/www/html/Request-Based-Marketplace/app\n<Directory /var/www/html/Request-Based-Marketplace/app>\n    Require all granted\n</Directory>' > /etc/apache2/conf-available/app.conf && a2enconf app
 
 # 3. Update Apache DocumentRoot to the new public folder path
-# This tells Apache to serve the site from the nested public folder
+
 RUN sed -i 's|/var/www/html|/var/www/html/Request-Based-Marketplace/public|g' /etc/apache2/sites-available/000-default.conf
 
 # Expose port
