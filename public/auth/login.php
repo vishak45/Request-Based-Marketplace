@@ -107,7 +107,7 @@ if(isset($_SESSION['user_id']))
         <!-- Footer -->
         <p class="text-sm text-center text-gray-600 mt-4">
             Don’t have an account?
-            <a href="/Request-Based-Marketplace/public/index.php?page=register"
+            <a href="/index.php?page=register"
                class="text-blue-600 hover:underline">
                 Register
             </a>
